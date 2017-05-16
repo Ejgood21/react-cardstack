@@ -27,12 +27,11 @@ class CardStack extends React.Component {
 		const {cardSelected} = this.state;
 
 		const nextState = (prev, offset, index) => {
-			const newOffset = (index === id) ? 0 : this.props.height;
 			return {
 				cardSelected: cardSelected ? false : true,
 				topOffsets: [
 					...prev.topOffsets,
-					cardSelected ? this.initialTopOffsets[index] : newOffset,
+					cardSelected ? this.initialTopOffsets[index] : 0,
 				],
 			};
 		};
